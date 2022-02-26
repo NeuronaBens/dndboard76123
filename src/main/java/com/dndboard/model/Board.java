@@ -7,7 +7,7 @@ import javax.persistence.Id;
 public class Board {
     @Id
     private Integer id;
-    @Column
+    @Column(columnDefinition = "LONGTEXT")
     private String boardHTML;
 
     public Integer getId() {
