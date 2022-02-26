@@ -13,25 +13,25 @@ public class BoardController {
     @Autowired
     private BoardDAO boardDAO;
 
-    @CrossOrigin(origins = "https://dndboard76123-frontend.herokuapp.com")
+    @CrossOrigin
     @PostMapping
     public void CreateBoard(@RequestBody Board board){
         boardDAO.save(board);
     }
 
-    @CrossOrigin(origins = "https://dndboard76123-frontend.herokuapp.com")
+    @CrossOrigin
     @GetMapping
     public List<Board> GetBoard(){
         return boardDAO.findAll();
     }
 
-    @CrossOrigin(origins = "https://dndboard76123-frontend.herokuapp.com")
+    @CrossOrigin
     @DeleteMapping("/{id}")
     public void DeleteBoard(@PathVariable("id") Integer id){
         boardDAO.deleteById(id);
     }
 
-    @CrossOrigin(origins = "https://dndboard76123-frontend.herokuapp.com")
+    @CrossOrigin
     @PutMapping
     public void UpdateBoard(@RequestBody Board board){
         boardDAO.save(board);
